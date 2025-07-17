@@ -1,9 +1,9 @@
-import React from "react";
+"use client";
 import { Userchat } from "../components/User-chat";
 import { Aichat } from "../components/Ai-chat";
 import { useState } from "react";
 
-export function Tuperai() {
+export default function myai() {
   const [user_prompt, setUser_prompt] = useState("");
   const handleChange = (e) => {
     setUser_prompt(e.target.value);
