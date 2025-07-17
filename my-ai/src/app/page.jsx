@@ -1,13 +1,21 @@
 "use client";
 import { Userchat } from "../components/User-chat";
 import { Aichat } from "../components/Ai-chat";
-import { useState } from "react";
-
+import { useState, useEffect, useRef } from "react";
 export default function myai() {
   const [user_prompt, setUser_prompt] = useState("");
   const handleChange = (e) => {
     setUser_prompt(e.target.value);
   };
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height =
+        textareaRef.current.scrollHeight + "px";
+    }
+  }, [user_prompt]);
 
   return (
     <main className="flex items-center justify-center h-dvh w-dvw">
@@ -26,15 +34,17 @@ export default function myai() {
           ></Aichat>
         </section>
         {/* user input section  */}
-        <section className="row-start-2 flex items-center gap-5 h-20 p-5 bg-[#4a4a4a68] rounded-2xl overflow-hidden">
+        <section className="row-start-2 flex items-center gap-5 p-5 bg-[#4a4a4a68] rounded-2xl">
           <textarea
-            className="w-1/1  leading-5 resize-none py-3  cursor-pointer focus:outline-0 break-words whitespace-pre-wrap "
-            type="text"
+            ref={textareaRef}
+            className="w-full leading-5 resize-none overflow-y-auto max-h-32 py-3 px-4 rounded-lg bg-transparent text-white placeholder-gray-400 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent focus:outline-none"
+            placeholder="Type your message..."
+            rows={1}
             value={user_prompt}
             onChange={handleChange}
             id=""
           />
-          <button className="border-1 border-[#4d4d4de5] cursor-pointer flex items-center uppercase gap-3.5 px-5 py-3.5 leading-5 rounded-lg ">
+          <button className="border-1 border-[#4d4d4de5] place-self-end cursor-pointer flex items-center uppercase gap-3.5 px-5 py-3.5 leading-5 rounded-lg ">
             send
             <img className="size-5 invert" src="/send-icon.svg" alt="" />
           </button>
