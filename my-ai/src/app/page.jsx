@@ -26,9 +26,9 @@ export default function myai() {
           ></Aichat>
         </section>
         {/* user input section  */}
-        <section className="row-start-2 flex items-center gap-5 h-20 p-5 bg-[#4a4a4a68] rounded-2xl">
-          <input
-            className="w-1/1  py-5 leading-5  cursor-pointer focus:outline-0"
+        <section className="row-start-2 flex items-center gap-5 h-20 p-5 bg-[#4a4a4a68] rounded-2xl overflow-hidden">
+          <textarea
+            className="w-1/1  leading-5 resize-none py-3  cursor-pointer focus:outline-0 break-words whitespace-pre-wrap "
             type="text"
             value={user_prompt}
             onChange={handleChange}
