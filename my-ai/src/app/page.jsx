@@ -62,7 +62,7 @@ export default function myai() {
             onChange={handleChange}
             id=""
           />
-          <button className="border-1 border-[#4d4d4de5] place-self-end cursor-pointer flex items-center uppercase gap-3.5 px-5 py-2.5 leading-5 rounded-lg ">
+          <button className="border-1 border-[#4d4d4de5] place-self-end cursor-pointer flex items-center capitalize gap-3.5 px-5 py-2.5 leading-5 rounded-lg ">
             send
             <img className="size-5 invert" src="/send-icon.svg" alt="" />
           </button>
