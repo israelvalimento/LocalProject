@@ -1,6 +1,25 @@
 import { initializeApp, getApps } from "firebase/app";
-import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot,getDocs,doc, where ,limit, deleteDoc } from "firebase/firestore";
-import { getAuth, signInAnonymously, onAuthStateChanged, signOut, GoogleAuthProvider } from "firebase/auth";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+  query,
+  orderBy,
+  onSnapshot,
+  getDocs,
+  doc,
+  where,
+  limit,
+  deleteDoc,
+} from "firebase/firestore";
+import {
+  getAuth,
+  signInAnonymously,
+  onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
 
 const firebaseConfig = {
@@ -14,7 +33,8 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const app =
+  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -27,8 +47,8 @@ export {
   model,
   auth,
   provider,
-  doc, 
-  where ,
+  doc,
+  where,
   getDocs,
   limit,
   deleteDoc,
