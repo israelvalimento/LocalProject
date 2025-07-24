@@ -56,27 +56,27 @@ export function Modal({ show = true }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 p-10 md:p-5 lg:p-5 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-[#2e2e2e] text-black p-8 rounded-2xl shadow-lg w-full max-w-md flex flex-col items-center gap-5 [&>button]:cursor-pointer [&>button]:hover:bg-[#7e7e7e8c]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-10 backdrop-blur-sm md:p-5 lg:p-5">
+      <div className="flex w-full max-w-md flex-col items-center gap-5 rounded-2xl bg-[#2e2e2e] p-8 text-black shadow-lg [&>button]:cursor-pointer [&>button]:hover:bg-[#7e7e7e8c]">
         <button
           onClick={handleAnonymousSignIn}
-          className="flex gap-3 items-center bg-[#4f4f4f]  px-5 py-3 rounded-xl text-white w-full justify-center"
+          className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#4f4f4f] px-5 py-3 text-white"
         >
-          <img src="/guest-icon.svg" alt="Guest Icon" className="w-6 h-6" />
+          <img src="/guest-icon.svg" alt="Guest Icon" className="h-6 w-6" />
           <span>Sign in as Guest</span>
         </button>
 
-        <div className=" flex items-center w-full my-4">
-          <div className="h-px grow-1  bg-[#5e5e5e]"></div>
-          <span className=" px-3  text-white">OR</span>
-          <div className="h-px grow-1  bg-[#5e5e5e]"></div>
+        <div className="my-4 flex w-full items-center">
+          <div className="h-px grow-1 bg-[#5e5e5e]"></div>
+          <span className="px-3 text-white">OR</span>
+          <div className="h-px grow-1 bg-[#5e5e5e]"></div>
         </div>
 
         <button
           onClick={handleGoogleSignIn}
-          className="flex gap-3 items-center bg-[#4f4f4f9d]  px-5 py-3 rounded-xl text-white w-full justify-center"
+          className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#4f4f4f9d] px-5 py-3 text-white"
         >
-          <img src="/google-icon.svg" alt="Google Icon" className="w-6 h-6" />
+          <img src="/google-icon.svg" alt="Google Icon" className="h-6 w-6" />
           <span>Sign in with Google</span>
         </button>
       </div>

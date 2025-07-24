@@ -1,10 +1,10 @@
 export function Aichat({ ai_text = "", ai_id }) {
   return (
-    <div className="flex flex-col w-full">
-      <div className="self-start max-w-[75%]">
+    <div className="flex w-full flex-col">
+      <div className="max-w-[75%] self-start">
         <p
           id={ai_id}
-          className="bg-[#ebebeb] text-[#1b1b1b] rounded-4xl px-5 py-3.5 leading-5 break-words whitespace-pre-wrap"
+          className="rounded-4xl bg-[#ebebeb] px-5 py-3.5 leading-5 break-words whitespace-pre-wrap text-[#1b1b1b]"
         >
           {ai_text}
         </p>

@@ -22,7 +22,7 @@ export function SignOut({ className = "", isHide }) {
     const snapshot = await getDocs(q);
 
     const deletePromises = snapshot.docs.map((docSnap) =>
-      deleteDoc(doc(db, "messages", docSnap.id))
+      deleteDoc(doc(db, "messages", docSnap.id)),
     );
 
     await Promise.all(deletePromises);
@@ -55,12 +55,12 @@ export function SignOut({ className = "", isHide }) {
   }, []);
 
   return (
-    <div className={`${className} flex items-center  rounded-lg lg:w-full`}>
+    <div className={`${className} flex items-center rounded-lg lg:w-full`}>
       <div
         onClick={handleSignOut}
-        className="flex items-center justify-around gap-3.5 lg:px-5 lg:py-3.5 cursor-pointer hover:bg-[#5555551c] rounded-lg lg:w-full"
+        className="flex cursor-pointer items-center justify-around gap-3.5 rounded-lg hover:bg-[#5555551c] lg:w-full lg:px-5 lg:py-3.5"
       >
-        <button className="hidden lg:block " disabled={loading}>
+        <button className="hidden lg:block" disabled={loading}>
           {isHide ? (loading ? `Signing Out...` : `Sign Out`) : null}
         </button>
         <img className={`size-5`} src="/logout-icon.svg" alt="logout-icon" />
